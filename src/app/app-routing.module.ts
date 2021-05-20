@@ -6,6 +6,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {HotelComponent} from './components/hotel/hotel.component';
 import {ServicioComponent} from './components/servicio/servicio.component';
 import {SearchHotelComponent} from './components/search-hotel/search-hotel.component';
+import {EventoComponent} from './components/evento/evento.component';
+import {RegisterComponent} from './components/register/register.component';
+import { from } from 'rxjs';
+
 
 const routes: Routes = [
   //una manera de realizarlo
@@ -13,10 +17,13 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: '**', component: NotFoundComponent},
   {path: 'hotel', component: HotelComponent},
+  {path: 'evento', component: EventoComponent},
   {path: 'servicio', component: ServicioComponent},
-  {path: 'searchH', component: SearchHotelComponent}
+  {path: 'searchH', component: SearchHotelComponent},
+  {path: 'registro', component:RegisterComponent},
+
+  {path: '**', component: NotFoundComponent}
 
 ];
 

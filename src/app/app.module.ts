@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { SearchHotelComponent } from './components/search-hotel/search-hotel.component';
+import { EventoComponent } from './components/evento/evento.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchHotelComponent } from './components/search-hotel/search-hotel.com
     HotelComponent,
     ServicioComponent,
     SearchHotelComponent,
+    EventoComponent,
   ],
   imports: [
     BrowserModule,
