@@ -1,5 +1,5 @@
- <!--Main Navigation-->
- <header>
+<div  [@fadeIn] class="todoxd">
+  <header>
     <style>
       #intro {
         background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
@@ -30,31 +30,6 @@
               <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
             </li>
           </ul>
-
-          <ul class="navbar-nav d-flex flex-row">
-            <!-- Icons -->
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                target="_blank">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-          </ul>
         </div>
     <!-- Navbar -->
 
@@ -64,16 +39,17 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
-              <form class="bg-white rounded shadow-5-strong p-5">
+              <form class="bg-white rounded shadow-5-strong p-5" #login="ngForm" (ngSubmit)="onSubmit()">
                 <!-- username input-->
+
                 <div class="form-outline mb-4">
-                  <input type="email" id="form1Example1" class="form-control" />
+                  <input [(ngModel)]="user.username" type="email" id="form1Example1" class="form-control" required />
                   <label class="form-label" for="form1Example1">username</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form1Example2" class="form-control" />
+                  <input [(ngModel)]="user.password" type="password" id="form1Example2" class="form-control"required />
                   <label class="form-label" for="form1Example2">Password</label>
                 </div>
 
@@ -96,7 +72,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button [disabled]="!login.form.valid" type="submit" class="btn btn-primary btn-block">Sign in</button>
               </form>
             </div>
           </div>
@@ -121,3 +97,6 @@
     <!-- Copyright -->
   </footer>
   <!--Footer-->
+
+
+ 

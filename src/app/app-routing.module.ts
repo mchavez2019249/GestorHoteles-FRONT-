@@ -8,7 +8,8 @@ import {ServicioComponent} from './components/servicio/servicio.component';
 import {SearchHotelComponent} from './components/search-hotel/search-hotel.component';
 import {EventoComponent} from './components/evento/evento.component';
 import {RegisterComponent} from './components/register/register.component';
-import { from } from 'rxjs';
+import { ResultadoSearchComponent } from './components/resultado-search/resultado-search.component';
+import { pathToFileURL } from 'url';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'servicio', component: ServicioComponent},
   {path: 'searchH', component: SearchHotelComponent},
   {path: 'registro', component:RegisterComponent},
+  {path: 'resultHotel', component:ResultadoSearchComponent},
 
   {path: '**', component: NotFoundComponent}
 
