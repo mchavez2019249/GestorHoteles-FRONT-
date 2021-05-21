@@ -84,16 +84,6 @@ export class ResHotelService {
   }
 
 
-  getHoteles(){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.getToken()
-    });
-    return this.http.get(this.uri+ 'getHoteles', {headers: headers})
-    .pipe(map(this.extractData))
-  }
-}
-
 
 
 
