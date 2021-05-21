@@ -55,4 +55,13 @@ export class RestContactService {
     .pipe(map(this.extractData))
   }
  
+  holaesteesunejemploparasabersisiguardaelgitkraken(idUser, idContact){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.restUser.getToken()
+    });
+    return this.http.put(this.uri+idUser+'/removeContact/'+idContact, null, {headers: headers})
+    .pipe(map(this.extractData))
+  }
+
 }
