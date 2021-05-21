@@ -1,102 +1,93 @@
-<div  [@fadeIn] class="todoxd">
-  <header>
-    <style>
+<div [@fadeIn] id="body" class="text-center">
+  
+<!--Main Navigation-->
+<header>
+  <style>
+    #intro {
+      background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+      height: 100vh;
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
       #intro {
-        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
-        height: 100vh;
+        margin-top: -58.59px;
       }
+    }
 
-      /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
-        #intro {
-          margin-top: -58.59px;
-        }
-      }
+    .navbar .nav-link {
+      color: #fff !important;
+    }
+  </style>
 
-      .navbar .nav-link {
-        color: #fff !important;
-      }
-    </style>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#intro">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                target="_blank">Learn Bootstrap 5</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
-            </li>
-          </ul>
-        </div>
-    <!-- Navbar -->
+   <!-- Background image -->
+  <div id="intro" class="bg-image shadow-2-strong">
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-md-8">
 
-    <!-- Background image -->
-    <div id="intro" class="bg-image shadow-2-strong">
-      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-5 col-md-8">
-              <form class="bg-white rounded shadow-5-strong p-5" #login="ngForm" (ngSubmit)="onSubmit()">
-                <!-- username input-->
-
-                <div class="form-outline mb-4">
-                  <input [(ngModel)]="user.username" type="email" id="form1Example1" class="form-control" required />
-                  <label class="form-label" for="form1Example1">username</label>
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input [(ngModel)]="user.password" type="password" id="form1Example2" class="form-control"required />
-                  <label class="form-label" for="form1Example2">Password</label>
-                </div>
-
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                  <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                      <label class="form-check-label" for="form1Example3">
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="col text-center">
-                    <!-- Simple link -->
-                    <a href="#!">Forgot password?</a>
-                  </div>
-                </div>
-
-                <!-- Submit button -->
-                <button [disabled]="!login.form.valid" type="submit" class="btn btn-primary btn-block">Sign in</button>
-              </form>
+            <form class="bg-white rounded shadow-5-strong p-5" #login="ngForm" (ngSubmit)="onSubmit()">
+              <!-- Username input -->
+              <div *ngIf="token" class="alert alert-success" role="alert">
+                Logeado
             </div>
+            <div *ngIf="!token && message" class="alert alert-success" role="alert">
+                No logeado {{message}}
+              </div>
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="user.username" name="username" type="text" id="form1Example1" class="form-control"required/>
+                <label class="form-label" for="inputUsername">Username</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="user.password" name="password" type="password" id="form1Example2" class="form-control"required/>
+                <label class="form-label" for="inputPassword">Password</label>
+              </div>
+
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                    <label class="form-check-label" for="form1Example3">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col text-center">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button [disabled]="!login.form.valid" class="btn btl-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+
           </div>
         </div>
       </div>
     </div>
-    <!-- Background image -->
-  </header>
-  <!--Main Navigation-->
+  </div>
+  <!-- Background image -->
+</header>
 
- 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-dark" href="https://kinal.academy/login/index.php">KINAL.com</a><br>
+    <a class="text-dark" >grupo1</a>
+  </div>
+  <!-- Copyright -->
+<!--Footer-->
+</div>
+
 
    
- 
-    <footer class="bg-light text-lg-start">
-    <!-- Copyright -->
-    <footer class="bg-light text-lg-start">
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">Grupo1-IN6BV.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!--Footer-->
+  
 
-
- 
+  
