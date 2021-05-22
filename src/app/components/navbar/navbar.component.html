@@ -18,8 +18,8 @@
         <li class="nav-item" *ngIf="token == null">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
+        <!--More options-->
         <li class="nav-item dropdown" *ngIf="token != null">
-            <!--quitar "bs" a las propiedades-->
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
             More Options
           </a>
@@ -47,11 +47,12 @@
             <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
           </ul>
         </li>
+        <!--Navbar-->
         <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/homeContacts">All contacts</a>
+          <a class="nav-link" routerLink="/searchH">Search Hotel</a>
         </li>
         <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/saveContact">Save contact</a>
+          <a class="nav-link" routerLink="/evento">Events</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto" *ngIf="token != null">
