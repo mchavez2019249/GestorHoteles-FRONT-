@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from '../../models/eventos.model';
+import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 
 @Component({
   selector: 'app-evento',
@@ -8,13 +8,17 @@ import { Event } from '../../models/eventos.model';
 })
 export class EventoComponent implements OnInit {
 
-  public event:Event;
+  event:[];
+  hotel;
 
-  constructor() { 
-    this.event = new Event('', '', false, null, '', '');
+
+  constructor(private restHotel:RestHotelService) { 
   }
 
   ngOnInit(): void {
+    this.hotel = this.restHotel.getHotel();
+    this.event = this.hotel.event;
+    console.log(this.event)
   }
 
 }

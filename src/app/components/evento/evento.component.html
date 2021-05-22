@@ -5,43 +5,15 @@
           <br>
           <h1 class="text-center">Eventos Proximos</h1>
           <hr>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
+          <div class="card" id="card" style="width: 40rem; height: rem;" *ngFor="let event of event">
             <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
+              <h2 class="card-title">{{event.name}}</h2>
               <hr>
               <div >
                 <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
+                <h6 class="card-subtitle">{{event.fecha}}  {{event.hora}}</h6>
                 <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
-                <br>
-              </div>
-              <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
-            </div>
-          </div>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
-            <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
-              <hr>
-              <div >
-                <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
-                <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
-                <br>
-              </div>
-              <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
-            </div>
-          </div>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
-            <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
-              <hr>
-              <div >
-                <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
-                <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
+                <h6 class="card-subtitle">{{event.precio}}</h6>
                 <br>
               </div>
               <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
