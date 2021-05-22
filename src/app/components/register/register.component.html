@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 
-<div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
     <div id="body" class="text-center" [@fadeIn]>
         <form class="form-signin" #register="ngForm" (ngSubmit)="onSubmit(register)">
             <div class="alert alert-danger" role="alert" *ngIf="!userSaved && message">
@@ -52,5 +51,4 @@
             <button type="submit" class="btn btn-primary"[disabled]="!register.form.valid">Sign up</button>
         </form>
     </div>
-</div>
-    
+
