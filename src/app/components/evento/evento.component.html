@@ -1,53 +1,20 @@
 <div class="container-fluid">
   <div style="background-color: #e74c3c;">
-    <header>
-        <div id="cards">
-          <br>
-          <h1 class="text-center">Eventos Proximos</h1>
-          <hr>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
-            <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
-              <hr>
-              <div >
-                <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
-                <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
-                <br>
-              </div>
-              <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
-            </div>
-          </div>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
-            <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
-              <hr>
-              <div >
-                <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
-                <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
-                <br>
-              </div>
-              <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
-            </div>
-          </div>
-          <div class="card" id="card" style="width: 40rem; height: rem;">
-            <div class="card-body">
-              <h2 class="card-title">{{event.name}}Nombre del Evento</h2>
-              <hr>
-              <div >
-                <img align='right' src="../../../assets/img/EventoIcono.png" width="25%" height="25%" style="margin-right: 5%;">
-                <h6 class="card-subtitle">{{event.fecha}}Fecha del Evento | {{event.hora}}Hora del evento</h6>
-                <br>
-                <h6 class="card-subtitle">{{event.precio}}$5.00</h6>
-                <br>
-              </div>
-              <button type="button" class="btn btn-success" style="margin-top: 1rem;">Ir al Evento</button>
-            </div>
+    <!--CARDS-->
+    <div id="cards">
+      <div class="card mio" style="width: 18rem;" *ngFor="let event of eventos; let i = index">
+          <img src="../../../assets/img/EventoIcono.png"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{event.name}} {{i}}</h5>
+            <p class="card-text">Name: {{event.name}}</p>
+            <p class="card-text">Estado: {{event.estado}}</p>
+            <p class="card-text">Precio: {{event.precio}}</p>
+            <p class="card-text">Fecha: {{event.fecha}}</p>
+            <p class="card-text">Hora: {{event.hora}}</p>
+            <a  class="btn btn-danger  mx-2" data-toggle="modal" data-target="#myModal" *ngIf="user.role == 'USER'" (click)="getEvent(event)">Delete</a>
+            <a  class="btn btn-danger  mx-2" data-toggle="modal" data-target="#myModal" *ngIf="user.role == 'USERH'" (click)="removeEvento()">Delete</a>
           </div>
         </div>
-    </header>
   </div>
-</div>
+
+  <!--Modals-->

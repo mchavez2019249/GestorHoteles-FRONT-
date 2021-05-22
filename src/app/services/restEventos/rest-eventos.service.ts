@@ -43,16 +43,6 @@ export class RestEventosService {
     return this.token;
   }
 
-  getEventos(){
-    let eventos = JSON.parse(localStorage.getItem('eventos'));
-    if(eventos != null || eventos != undefined){
-      this.evento = eventos;
-    }else {
-      this.evento = null;
-    }
-    return this.evento;
-  }
-
   setEventos(idUser, evento){
     let headers = new HttpHeaders({
       'Content-Type' : 'application.json',
