@@ -23,6 +23,7 @@ import { NotFoundComponent} from './components/not-found/not-found.component';
 import { RegisterComponent} from './components/register/register.component';
 import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HomeHotelComponent } from './components/home-hotel/home-hotel.component
     NotFoundComponent,
     RegisterComponent,
     SaveHotelComponent,
-    HomeHotelComponent
+    HomeHotelComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
