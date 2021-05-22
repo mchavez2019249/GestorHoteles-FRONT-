@@ -1,0 +1,13 @@
+#cards{
+    margin-left: 8rem;
+}
+
+.card{
+    border: #b9d9f2 5px solid;
+    margin-top: 4rem;
+}
+
+h1{
+    font-size: 600%;
+    color: #ffff;
+}
