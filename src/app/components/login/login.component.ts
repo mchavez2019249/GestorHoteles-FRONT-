@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role', JSON.stringify(res.role));    
           console.log(res.user, res.token);
           alert('Usuario logeado exitosamente');
-          this.router.navigateByUrl('homeContacts')
+          this.router.navigateByUrl('homeHotel')
         }
       }
     },

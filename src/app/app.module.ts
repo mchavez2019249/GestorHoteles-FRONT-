@@ -21,6 +21,8 @@ import { ResultadoSearchComponent } from './components/resultado-search/resultad
 import { UserComponent } from './components/user/user.component';
 import { NotFoundComponent} from './components/not-found/not-found.component';
 import { RegisterComponent} from './components/register/register.component';
+import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
+import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { RegisterComponent} from './components/register/register.component';
     ResultadoSearchComponent,
     UserComponent,
     NotFoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    SaveHotelComponent,
+    HomeHotelComponent
   ],
   imports: [
     BrowserModule,
