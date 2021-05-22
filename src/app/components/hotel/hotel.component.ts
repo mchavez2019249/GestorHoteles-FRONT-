@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//Importacion del modelo hotel
+import { Hotel } from '../../models/hotel'
 
 @Component({
   selector: 'app-hotel',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelComponent implements OnInit {
 
-  constructor() { }
+  public hotel:Hotel;
+
+  constructor() {
+    this.hotel= new Hotel('', '', '', '', null, '', [], [], []);
+   }
 
   ngOnInit(): void {
   }
