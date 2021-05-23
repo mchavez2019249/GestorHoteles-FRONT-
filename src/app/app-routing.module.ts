@@ -5,12 +5,12 @@ import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { SearchHotelComponent } from './components/search-hotel/search-hotel.component';
-import { EventoComponent } from './components/evento/evento.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResultadoSearchComponent } from './components/resultado-search/resultado-search.component';
 import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 import { UserComponent } from './components/user/user.component';
+import { ListRoomComponent} from './components/list-room/list-room.component';
 
 
 
@@ -21,7 +21,6 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'evento', component: EventoComponent},
   {path: 'servicio', component: ServicioComponent},
   {path: 'searchH', component: SearchHotelComponent},
   {path: 'registro', component:RegisterComponent},
@@ -29,6 +28,7 @@ const routes: Routes = [
   {path: 'saveHotel', component:SaveHotelComponent},
   {path: 'homeHotel', component:HomeHotelComponent},
   {path: 'user',component:UserComponent},
+  {path: 'habitaciones', component:ListRoomComponent},
   {path: '**', component: NotFoundComponent}
 
 ];
