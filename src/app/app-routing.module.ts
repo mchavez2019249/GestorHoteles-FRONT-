@@ -29,6 +29,7 @@ const routes: Routes = [
   {path: 'resultHotel', component:ResultadoSearchComponent},
   {path: 'saveHotel', component:SaveHotelComponent},
   {path: 'homeHotel', component:HomeHotelComponent},
+  {path: 'user',component:UserComponent},
   {path: 'user', component:UserComponent},
   {path: '**', component: NotFoundComponent}
 
