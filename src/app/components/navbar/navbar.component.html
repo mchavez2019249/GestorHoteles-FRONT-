@@ -32,36 +32,25 @@
             <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/updateUserAdmin" class="dropdown-item">Update User</a></li>
             <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/searchUser" class="dropdown-item">Search User</a></li>
             <!--functions user-->
-            <li *ngIf="user.role == 'USER'"><a routerLink="/getHoteles" class="dropdown-item">List users</a></li>
-            <li *ngIf="user.role == 'USER'"><a routerLink="/searchHotel" class="dropdown-item">Search Hotel</a></li>
-            <li *ngIf="user.role == 'USER'"><a routerLink="/reserveRoom" class="dropdown-item">Reserve Room</a></li>
-            <li *ngIf="user.role == 'USER'"><a routerLink="/bookEvent" class="dropdown-item">Asist event</a></li>
-            <li *ngIf="user.role == 'USER'"><a routerLink="/getEventos" class="dropdown-item">List Events</a></li>
-            <li *ngIf="user.role == 'USER'"><a routerLink="/updateUserU" class="dropdown-item">Update User</a></li>
-            <li><hr class="dropdown-divider"></li>
             <!--functions Admin Hotel-->
-            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/deleteHotel" class="dropdown-item">Save Hotel</a></li>
-            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/updateHotel" class="dropdown-item">Update User</a></li>
-            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/setRoom" class="dropdown-item">Search User</a></li>
-            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeRoome" class="dropdown-item">Delete Roome</a></li>
-            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeEvent" class="dropdown-item">Delete Event</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/updateHotel" class="dropdown-item">Update Hotel</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/deleteHotel" class="dropdown-item">Delete Hotel</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
           </ul>
         </li>
-
    
         <!--Navbar-->
         <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/searchH">Search Hotel</a>
+          <a class="nav-link" routerLink="/searchH">Buscar Hotel</a>
         </li>
         <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/evento">Events</a>
+          <a class="nav-link" routerLink="/evento">Eventos</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto" *ngIf="token != null">
         <li class="nav-text">
-          <a class="nav-link">{{user.username}}</a>
+          <a class="nav-link" routerLink="/user" *ngIf="user.role == 'USER'">{{user.username}}</a>
         </li>
         <li>
           <img *ngIf="user.image" id="imgUser" src="{{uri+'uploadImage/'+user.image}}" alt="user image">
