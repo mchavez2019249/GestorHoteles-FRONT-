@@ -1,7 +1,5 @@
-<div class="container-fluid">
-  <div style="background-color: #e74c3c;">
+<app-navbar></app-navbar>
     <!--CARDS-->
-    <div id="cards">
       <div class="card mio" style="width: 18rem;" *ngFor="let event of eventos; let i = index">
           <img src="../../../assets/img/EventoIcono.png"  alt="...">
           <div class="card-body">
@@ -15,7 +13,7 @@
             <a  class="btn btn-danger  mx-2" data-toggle="modal" data-target="#myModal" *ngIf="user.role == 'USERH'" (click)="removeEvento()">Delete</a>
           </div>
         </div>
-  </div>
+
 
   <!--Modals-->
   <!-- MODAL PARA ELIMINAR  EVENTO-->

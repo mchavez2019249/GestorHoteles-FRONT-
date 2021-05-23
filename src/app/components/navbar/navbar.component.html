@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-    <img src="../../../assets/img/LogoGestorHotel.png" alt="" width="50" height="">
+    <img src="../../../assets/img/LogoGestorHotel.png" alt="" width="60" height="">
   </a>
-    <!--quitar "bs" a las propiedas-->
+    <!--btn responsive-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" *ngIf="token == null">
@@ -18,35 +19,36 @@
         <li class="nav-item" *ngIf="token == null">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-          <!--more options-->
-        <li class="nav-item dropdown" *ngIf="token != null">
-          <!--quitar "bs" a las propiedades-->
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          More Options
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <!--functions admin app-->
-          <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/saveHotelAdmin" class="dropdown-item">Save Hotel</a></li>
-          <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/updateUserAdmin" class="dropdown-item">Update User</a></li>
-          <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/searchUser" class="dropdown-item">Search User</a></li>
-          <!--functions user-->
-          <li *ngIf="user.role == 'USER'"><a routerLink="/getHoteles" class="dropdown-item">List users</a></li>
-          <li *ngIf="user.role == 'USER'"><a routerLink="/searchHotel" class="dropdown-item">Search Hotel</a></li>
-          <li *ngIf="user.role == 'USER'"><a routerLink="/reserveRoom" class="dropdown-item">Reserve Room</a></li>
-          <li *ngIf="user.role == 'USER'"><a routerLink="/bookEvent" class="dropdown-item">Asist event</a></li>
-          <li *ngIf="user.role == 'USER'"><a routerLink="/getEventos" class="dropdown-item">List Events</a></li>
-          <li *ngIf="user.role == 'USER'"><a routerLink="/updateUserU" class="dropdown-item">Update User</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <!--functions Admin Hotel-->
-          <li *ngIf="user.role == 'ADMINH'"><a routerLink="/deleteHotel" class="dropdown-item">Save Hotel</a></li>
-          <li *ngIf="user.role == 'ADMINH'"><a routerLink="/updateHotel" class="dropdown-item">Update User</a></li>
-          <li *ngIf="user.role == 'ADMINH'"><a routerLink="/setRoom" class="dropdown-item">Search User</a></li>
-          <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeRoome" class="dropdown-item">Delete Roome</a></li>
-          <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeEvent" class="dropdown-item">Delete Event</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
-        </ul>
-      </li>
+
+
+    
+        <li class="nav-item dropdown"  *ngIf="token != null">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More Options
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!--functions admin app-->
+            <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/saveHotelAdmin" class="dropdown-item">Save Hotel</a></li>
+            <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/updateUserAdmin" class="dropdown-item">Update User</a></li>
+            <li *ngIf="user.role == 'ROLE_ADMIN'"><a routerLink="/searchUser" class="dropdown-item">Search User</a></li>
+            <!--functions user-->
+            <li *ngIf="user.role == 'USER'"><a routerLink="/getHoteles" class="dropdown-item">List users</a></li>
+            <li *ngIf="user.role == 'USER'"><a routerLink="/searchHotel" class="dropdown-item">Search Hotel</a></li>
+            <li *ngIf="user.role == 'USER'"><a routerLink="/reserveRoom" class="dropdown-item">Reserve Room</a></li>
+            <li *ngIf="user.role == 'USER'"><a routerLink="/bookEvent" class="dropdown-item">Asist event</a></li>
+            <li *ngIf="user.role == 'USER'"><a routerLink="/getEventos" class="dropdown-item">List Events</a></li>
+            <li *ngIf="user.role == 'USER'"><a routerLink="/updateUserU" class="dropdown-item">Update User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <!--functions Admin Hotel-->
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/deleteHotel" class="dropdown-item">Save Hotel</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/updateHotel" class="dropdown-item">Update User</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/setRoom" class="dropdown-item">Search User</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeRoome" class="dropdown-item">Delete Roome</a></li>
+            <li *ngIf="user.role == 'ADMINH'"><a routerLink="/removeEvent" class="dropdown-item">Delete Event</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
+          </ul>
+        </li>
 
    
         <!--Navbar-->
