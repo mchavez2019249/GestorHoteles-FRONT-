@@ -15,7 +15,6 @@ import { UserComponent } from './components/user/user.component';
 
 
 
-
 const routes: Routes = [
   //una manera de realizarlo
   {path: '', component: HomeComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
@@ -31,6 +30,7 @@ const routes: Routes = [
   {path: 'saveHotel', component:SaveHotelComponent},
   {path: 'homeHotel', component:HomeHotelComponent},
   {path: 'user',component:UserComponent},
+  {path: 'user', component:UserComponent},
   {path: '**', component: NotFoundComponent}
 
 ];

@@ -42,8 +42,10 @@
    
         <!--Navbar-->
         <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/searchH">Buscar Hotel</a>
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
+        <li class="nav-item" *ngIf="token != null">
+          <a class="nav-link" routerLink="/searchH">Search Hotel</a>
         <li class="nav-item" *ngIf="token != null">
           <a class="nav-link" routerLink="/evento">Eventos</a>
         </li>
