@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CONNECTION } from '../global';
 import { map } from 'rxjs/operators';
-import { RestHotelService } from '../restHotel/rest-hotel.service';
 import { RestUserService } from '../restUser/rest-user.service';
 
 
