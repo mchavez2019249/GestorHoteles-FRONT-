@@ -21,7 +21,7 @@ export class SearchHotelComponent implements OnInit {
   }
 
   listHotel(){
-    this.rest.getHotel().subscribe((res:any)=>{
+    this.rest.getHoteles().subscribe((res:any)=>{
       if(res.hotels){
         this.hotels = res.hotels;
         console.log('Hoteles cargados')

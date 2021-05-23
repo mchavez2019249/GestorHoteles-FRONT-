@@ -25,6 +25,7 @@ import { SaveHotelComponent } from './components/save-hotel/save-hotel.component
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FilterHotelPipe } from './pipes/filter-hotel.pipe';
+import { ListRoomComponent } from './components/list-room/list-room.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,6 @@ import { FilterHotelPipe } from './pipes/filter-hotel.pipe';
     HotelComponent,
     ServicioComponent,
     SearchHotelComponent,
-    EventoComponent,
     ResultadoSearchComponent,
     UserComponent,
     NotFoundComponent,
@@ -43,7 +43,9 @@ import { FilterHotelPipe } from './pipes/filter-hotel.pipe';
     SaveHotelComponent,
     HomeHotelComponent,
     ProfileComponent,
-    FilterHotelPipe
+    FilterHotelPipe,
+    ListRoomComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,
