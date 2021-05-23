@@ -1,7 +1,19 @@
 <app-navbar></app-navbar>
-<div  [@fadeIn] class="list-group">
-    <a href="#" class="list-group-item active">
-      <h4 class="list-group-item-heading">Título del elemento de la lista</h4>
-      <p class="list-group-item-text">...</p>
-    </a>
+<div id="cards">
+  <h1 class="text-center">Registered hotels</h1>
+  <br>
+      <form class="form-inline justify-content-center">
+          <div class="form-group">
+              <input [(ngModel)]="filterHotel" name="searchHotel" class="form-control-lg" type="search" placeholder="Search by Name" aria-label="Search">
+          </div>
+      </form>
+  <hr>
+  <div class="card myWidth text-white bg-secondary" *ngFor="let hotel of hotels | filterHotel:filterHotel">
+      <div class="card-body">
+          <h5 class="card-title">{{hotel.name}}</h5>
+          <p class="card-text">{{hotel.direccion}}</p>
+          <p class="card-text">{{hotel.descripcion}}</p>
+          <p class="card-text">{{hotel.telefono}}</p>
+      </div>
   </div>
+</div>

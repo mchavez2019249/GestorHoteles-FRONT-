@@ -1,101 +1,19 @@
 <app-navbar></app-navbar>
-<!------ titulo ---------->
-
-<section class="head">
-    <div class="container">
-        <h2 class="text-center"><span>RESULTADOS HOTELES</span><i class="fa fa-search"></i></h2>
+<div id="cards">
+    <h1 class="text-center">Registered hotels</h1>
+    <br>
+        <form class="form-inline justify-content-center">
+            <div class="form-group">
+                <input [(ngModel)]="filterHotel" name="searchHotel" class="form-control-lg" type="search" placeholder="Search by Name" aria-label="Search">
+            </div>
+        </form>
+    <hr>
+    <div class="card myWidth text-white bg-secondary" *ngFor="let hotel of hotels | filterHotel:filterHotel">
+        <div class="card-body">
+            <h5 class="card-title">{{hotel.name}}</h5>
+            <p class="card-text">{{hotel.direccion}}</p>
+            <p class="card-text">{{hotel.descripcion}}</p>
+            <p class="card-text">{{hotel.telefono}}</p>
+        </div>
     </div>
-</section>
-<div class="clearfix"></div>
-<section class="search-box">
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 listing-block">
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <!----Muestra nombre y descripcion del hotel-->
-                <div class="price">{{hotel.name}}<small>{{hotel.description}}</small></div>
-                <div class="stats">
-                  <!--Muestra direccion y habitaciones del hotel-->
-                    <span><i class="fa fa-arrows-alt"></i>{{hotel.direction}}</span>
-                    <span><i class="fa fa-bath"></i>{{hotel.habitacion}}</span>
-                </div>
-                <div class="address">hola3
-            Guatemala</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$799,000<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-		</div>
-		
+  </div>

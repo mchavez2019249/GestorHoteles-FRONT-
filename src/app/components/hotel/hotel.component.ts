@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//Importacion del modelo hotel
-import { Hotel } from '../../models/hotel'
+import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 
 @Component({
   selector: 'app-hotel',
@@ -9,13 +8,26 @@ import { Hotel } from '../../models/hotel'
 })
 export class HotelComponent implements OnInit {
 
-  public hotel:Hotel;
+  constructor(private rest:RestHotelService) { }
 
-  constructor() {
-    this.hotel= new Hotel('', '', '', '', null, '', [], [], []);
-   }
+  hotels:[];
+  filterHotel;
+
 
   ngOnInit(): void {
+    this.listHotel();
+  }
+
+  listHotel(){
+    this.rest.getHotel().subscribe((res:any)=>{
+      if(res.hotels){
+        this.hotels = res.hotels;
+        console.log('Hoteles cargados')
+      }else{
+        alert(res.message)
+      }
+    },
+    error => alert(error.error.message))
   }
 
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CONNECTION } from '../global';
 import { map } from 'rxjs/operators';
-import { RestHotelService } from '../restHotel/rest-hotel.service';
 import { RestUserService } from '../restUser/rest-user.service';
 
 
@@ -41,16 +40,6 @@ export class RestEventosService {
       this.token = null;
     }
     return this.token;
-  }
-
-  getEventos(){
-    let eventos = JSON.parse(localStorage.getItem('eventos'));
-    if(eventos != null || eventos != undefined){
-      this.evento = eventos;
-    }else {
-      this.evento = null;
-    }
-    return this.evento;
   }
 
   setEventos(idUser, evento){
