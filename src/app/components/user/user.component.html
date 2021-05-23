@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div id="body" class="text-center" [@fadeIn]>
   <form class="form-signin" #updateUser="ngForm" (ngSubmit)="onSubmit()">
       <div class="alert alert-danger" role="alert"  *ngIf="status == false">
@@ -46,6 +47,10 @@
         Upload image
       </button>
   </form>
+
+
+
+
 
   <!-- MODAL PARA ELIMINAR CUENTA DE USUARIO-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
