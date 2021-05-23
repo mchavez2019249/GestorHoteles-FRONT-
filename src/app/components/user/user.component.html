@@ -40,67 +40,64 @@
       <button type="submit" class="btn btn-success col-lg-3 mx-2" [disabled]="!updateUser.form.valid">
           Update
       </button>
-      <button type="button" class="btn btn-danger col-lg-3 mx-2" data-target="#exampleModal" data-toggle="modal">
-          Delete Account
+      <button type="button" class="btn btn-danger col-lg-3 mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Delete Account
       </button>
-      <button type="button" class="btn btn-primary col-lg-3 mx-2" data-target="#myModal" data-toggle="modal">
-        Upload image
+      <button type="button" class="btn btn-warning col-lg-3 mx-2" data-bs-toggle="modal" data-bs-target="#exampleModalDos">
+        Upload Image
       </button>
   </form>
 
 
-
-
-
-  <!-- MODAL PARA ELIMINAR CUENTA DE USUARIO-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Danger Zone!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <span class="mt-5 mb-3 text-muted">Are you shure to delte your account?</span>
+<!-- MODAL DELETE-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalLabel">
+          One click to delete your account!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="mt-5 mb-3 text-muted">Are you shure to delte your account?</span>
             <h3>This action is irreversible!</h3>
             <span>Enter your password to continue</span>
             <form #formRemove="ngForm">
                 <label for="passwordRemoved"></label>
                 <input [(ngModel)]="possiblePass" type="password" id="passwordRemoved" name="passworRemoved" required>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" data-dismiss="modal" class="btn btn-danger" [disabled]="!formRemove.form.valid" (click)="deleteAccount()">I'm sure</button>
-          </div>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-danger ripple-surface" [disabled]="!formRemove.form.valid" (click)="deleteAccount()">I'm sure</button>
       </div>
     </div>
-
-    <!--Modal para imagen-->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">User image</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-           <div class="modal-body">
-            <h3>Upload your image</h3>
-            <form #formImage="ngForm">
-              <label for="imageInput"></label>
-              <input type="file" name="image" id="imageInput" (change)="fileChange($event)">
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" data-dismiss="modal" class="btn btn-primary" [disabled]="!formImage.form.valid" (click)="uploadImage()">Upload Image</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 </div>
+<!--------MODAL PARA IMAGEN------------>
+
+<div class="modal fade" id="exampleModalDos" tabindex="-1" aria-labelledby="exampleModalDosLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-white d-flex justify-content-center">
+        <h5 class="modal-title" id="exampleModalDos">
+          get handsome!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3>Upload your image</h3>
+        <form #formImage="ngForm">
+          <label for="imageInput"></label>
+          <input type="file" name="image" id="imageInput" (change)="fileChange($event)">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success   ripple-surface" [disabled]="!formRemove.form.valid" (click)="deleteAccount()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+    

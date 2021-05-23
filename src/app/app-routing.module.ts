@@ -11,6 +11,7 @@ import { ResultadoSearchComponent } from './components/resultado-search/resultad
 import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 import { UserComponent } from './components/user/user.component';
+import { ListRoomComponent} from './components/list-room/list-room.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'saveHotel', component:SaveHotelComponent},
   {path: 'homeHotel', component:HomeHotelComponent},
   {path: 'user',component:UserComponent},
+  {path: 'habitaciones', component:ListRoomComponent},
   {path: '**', component: NotFoundComponent}
 
 ];

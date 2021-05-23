@@ -4,7 +4,7 @@
     <img src="../../../assets/img/LogoGestorHotel.png" alt="" width="60" height="">
   </a>
     <!--btn responsive-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
@@ -41,9 +41,6 @@
         </li>
    
         <!--Navbar-->
-        <li class="nav-item" *ngIf="token != null">
-          <a class="nav-link" routerLink="/home">Home</a>
-        </li>
         <li class="nav-item" *ngIf="token != null">
           <a class="nav-link" routerLink="/searchH">Search Hotel</a>
         <li class="nav-item" *ngIf="token != null">
