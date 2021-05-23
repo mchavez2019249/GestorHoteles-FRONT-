@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
     },
     error=> alert(error.error.message))
   }
-
+  
   deleteAccount(){
     this.restUser.deteleUser(this.user._id, this.possiblePass).subscribe((res:any)=>{
       if(!res.userRemoved){
