@@ -34,7 +34,7 @@
                 Logeado
             </div>
             <div *ngIf="!token && message" class="alert alert-success" role="alert">
-                No logeado {{message}}
+               {{message}}
               </div>
               <div class="form-outline mb-4">
                 <img class="mb-4" width="100" height="100" src="../../../assets/img/user.png" alt="logoProfile">
@@ -67,7 +67,11 @@
               </div>
 
               <!-- Submit button -->
-              <button [disabled]="!login.form.valid" class="btn btl-lg btn-primary btn-block" type="submit">Sign in</button>
+              <button [disabled]="!login.form.valid" class="btn btl-lg btn-primary btn-block" type="submit">Login</button>
+              <div class="col text-center">
+                <!-- register link -->
+                <a href="/registro">You do not have an account? Sign up</a>
+              </div>
             </form>
 
           </div>
