@@ -16,6 +16,7 @@ import { ListEventoComponent } from './components/list-evento/list-evento.compon
 
 
 
+
 const routes: Routes = [
 //importacion de components
   {path: '', component: HomeComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
