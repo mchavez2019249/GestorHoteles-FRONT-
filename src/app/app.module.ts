@@ -16,7 +16,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { SearchHotelComponent } from './components/search-hotel/search-hotel.component';
-import { EventoComponent } from './components/evento/evento.component';
 import { ResultadoSearchComponent } from './components/resultado-search/resultado-search.component';
 import { UserComponent } from './components/user/user.component';
 import { NotFoundComponent} from './components/not-found/not-found.component';
@@ -26,6 +25,9 @@ import { HomeHotelComponent } from './components/home-hotel/home-hotel.component
 import { ProfileComponent } from './components/profile/profile.component';
 import { FilterHotelPipe } from './pipes/filter-hotel.pipe';
 import { ListRoomComponent } from './components/list-room/list-room.component';
+import { ListEventoComponent } from './components/list-evento/list-evento.component';
+import { EventoComponent } from './components/evento/evento.component';
+import { SaveEventComponent } from './components/save-event/save-event.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ListRoomComponent } from './components/list-room/list-room.component';
     ProfileComponent,
     FilterHotelPipe,
     ListRoomComponent,
-    EventoComponent
+    ListEventoComponent,
+    EventoComponent,
+    SaveEventComponent,
   ],
   imports: [
     BrowserModule,
