@@ -1,28 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CONNECTION } from '../global';
+import { RestUserService } from '../restUser/rest-user.service';
 import { map } from 'rxjs/Operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestHotelService {
-  public uri:string;
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+
+  public user;
   public token;
   public hotel;
+
+  public uri:string;
+  public httpOptionsAuth = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.restUser.getToken()
+    })
+  };
+
   private extractData(res: Response){
   let body = res;
   return body || [] || {};
   }
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private restUser:RestUserService, private http:HttpClient) { 
     this.uri = CONNECTION.URI;
   }
 
@@ -50,19 +55,15 @@ export class RestHotelService {
     return this.hotel;
   }
 
-  saveHotel(hotel){
-    let params = JSON.stringify(hotel);
-    return this.http.post(this.uri + 'saveHotel',params, this.httpOptions)
-    .pipe(map(this.extractData));
-  }
-
-  login (hotel, tokenStatus){
-    hotel.gettoken = tokenStatus;
-    let params = JSON.stringify(hotel);
-    return this.http.post(this.uri+'login',params, this.httpOptions)
-    .pipe(map(this.extractData))
-  }
- 
+  saveHotelAdmin(idUser, hotel){
+    let headers = new HttpHeaders({
+       'Content-Type': 'application/json',
+       'Authorization': this.restUser.getToken()
+     })
+     let params = JSON.stringify(hotel);
+     return this.http.post(this.uri+'/saveHotelAdmin/'+idUser, params, {headers:headers})
+     .pipe(map(this.extractData))
+   }
 
   updateHotel(hotelToUpdate){
     let params = JSON.stringify(hotelToUpdate);

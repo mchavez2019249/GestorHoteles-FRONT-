@@ -72,7 +72,7 @@ export class RestEventosService {
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     });
-    return this.http.get(this.uri+ 'getEventos', {headers: headers})
+    return this.http.get(this.uri+ '/getEventos')
     .pipe(map(this.extractData))
   }
 }

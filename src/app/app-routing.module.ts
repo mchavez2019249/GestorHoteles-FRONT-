@@ -10,7 +10,7 @@ import { ResultadoSearchComponent } from './components/resultado-search/resultad
 import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 import { UserComponent } from './components/user/user.component';
-import { ListRoomComponent} from './components/list-room/list-room.component';
+import { ListRoomComponent } from './components/list-room/list-room.component';
 import { ListEventoComponent } from './components/list-evento/list-evento.component';
 
 
@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'searchH', component: SearchHotelComponent},
   {path: 'registro', component:RegisterComponent},
   {path: 'resultHotel', component:ResultadoSearchComponent},
-  {path: 'saveHotel', component:SaveHotelComponent},
+  {path: 'saveHotelAdmin', component:SaveHotelComponent},
   {path: 'homeHotel', component:HomeHotelComponent},
   {path: 'user',component:UserComponent},
   {path: 'habitaciones', component:ListRoomComponent},
@@ -41,4 +41,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

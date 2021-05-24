@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { fadeIn } from '../../animations/animations';
 import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
+import { Hotel } from '../../models/hotel';
 
 @Component({
   selector: 'app-search-hotel',
@@ -17,10 +18,10 @@ export class SearchHotelComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.listHotel();
+    this.listHoteles();
   }
 
-  listHotel(){
+  listHoteles(){
     this.rest.getHoteles().subscribe((res:any)=>{
       if(res.hotels){
         this.hotels = res.hotels;

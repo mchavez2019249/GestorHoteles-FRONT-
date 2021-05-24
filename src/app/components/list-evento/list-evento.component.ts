@@ -9,7 +9,7 @@ import { Event } from '../../models/event';
   styleUrls: ['./list-evento.component.css']
 })
 export class ListEventoComponent implements OnInit {
-  eventos: [];
+  eventos:[];
   hotel;
   eventSelected:Event;
  
@@ -19,14 +19,25 @@ export class ListEventoComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventSelected = new Event('','',false,null,'','')
-    this.hotel = this.restHotel.getHotel()
-    this.eventos = this.hotel.eventos;
+    this.listEventos();
     console.log(this.eventos)
   }
 
   getEvent(event){
     this.eventSelected = event;
     console.log(event._id)
+  }
+
+  listEventos(){
+    this.restEventos.getEvents().subscribe((res:any)=>{
+      if(res.users){
+        this.eventos = res.event;
+        console.log('eventos cargados')
+      }else{
+        alert(res.message)
+      }
+    },
+    error => alert(error.error.message))
   }
 
   removeEvent(){

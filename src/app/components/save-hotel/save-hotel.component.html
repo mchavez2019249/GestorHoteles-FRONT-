@@ -1,2 +1,24 @@
 <app-navbar></app-navbar>
-<p>pagina para hacer el formulario de save hotel</p>
+<br>
+<h1 class="text-center">Crear Hotel</h1>
+<hr>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../../assets/img/logo.png" style="width: 100px; height:100px;" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form (ngSubmit)="onSubmit(saveHotelAdmin)" #saveHotelAdmin="ngForm">
+        <input [(ngModel)]="hotel.name" type="text" id="login" class="fadeIn second" name="name" placeholder="NAME" required>
+        <input [(ngModel)]="hotel.direction" type="text" id="password" class="fadeIn third" name="direction" placeholder="DIRECTION" required>
+        <input [(ngModel)]="hotel.description" type="text" id="password" class="fadeIn third" name="description" placeholder="DESCRIPTION" required>
+        <input [(ngModel)]="hotel.telefono" type="number" id="password" class="fadeIn third" name="telefono" placeholder="TELEFONO" required>
+        <input type="submit" class="fadeIn fourth" value="Save" [disabled]="!saveHotelAdmin.form.valid">
+      </form>
+  
+    </div>
+  </div>

@@ -1,20 +1,19 @@
 <app-navbar></app-navbar>
 <div id="cards">
-  <div class="card mio" style="width: 18rem;" *ngFor="let event of eventos; let i = index">
+  <div class="card mio" style="width: 18rem;" *ngFor=" let i = index">
       <img src="../../../assets/img/EventIcon.PNG"  alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{event.name}} {{i}}</h5>
+        <h5 class="card-title">{{event.name}}</h5>
         <p class="card-text">Estado: {{event.estado}}</p>
         <p class="card-text">Precio: {{event.precio}}</p>
         <p class="card-text">Fecha: {{event.fecha}}</p>
         <p class="card-text">Hora: {{event.hora}}</p>
-        <a  class="btn btn-danger  mx-2" data-toggle="modal" data-target="#myModal" (click)="getEvent(event)">Remove</a>
       </div>
     </div>
 </div>
 
 <!-- MODAL PARA ELIMINAR CONTACTO-->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalRemove" aria-hidden="true">
+<!--<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalRemove" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -34,5 +33,6 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
+
 

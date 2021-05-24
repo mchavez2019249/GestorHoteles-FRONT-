@@ -26,8 +26,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FilterHotelPipe } from './pipes/filter-hotel.pipe';
 import { ListRoomComponent } from './components/list-room/list-room.component';
 import { ListEventoComponent } from './components/list-evento/list-evento.component';
-import { EventoComponent } from './components/evento/evento.component';
-import { SaveEventComponent } from './components/save-event/save-event.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +45,7 @@ import { SaveEventComponent } from './components/save-event/save-event.component
     ProfileComponent,
     FilterHotelPipe,
     ListRoomComponent,
-    ListEventoComponent,
-    EventoComponent,
-    SaveEventComponent,
+    ListEventoComponent
   ],
   imports: [
     BrowserModule,
