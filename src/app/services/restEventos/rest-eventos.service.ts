@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CONNECTION } from '../global';
 import { map } from 'rxjs/operators';
-import { RestUserService } from '../restUser/rest-user.service';
-
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class RestEventosService {
   public uri: string;
-  public user;
+  public event;
   public httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -24,7 +23,7 @@ export class RestEventosService {
   }
 
 
-  constructor(private restUser: RestUserService, private http:HttpClient) { 
+  constructor(private http:HttpClient) { 
     this.uri = CONNECTION.URI;
   }
 
@@ -42,22 +41,49 @@ export class RestEventosService {
     return this.token;
   }
 
-  setEventos(idUser, evento){
-    let headers = new HttpHeaders({
-      'Content-Type' : 'application.json',
-      'Authorization' : this.restUser.getToken()
-    })
-    let params = JSON.stringify(evento);
-    return this.http.put(this.uri+idUser+'/setEventos', params, {headers: headers})
-    .pipe(map(this.extractData))
+  getEvent(){
+    let event = JSON.parse(localStorage.getItem('event'));
+    if(event != null || event != undefined){
+      this.event = event;
+    }else{
+      this.event = null;
+    }
+    return this.event;
   }
 
-  removeEvento(idUser, idEvento){
+  saveEvent(event){
+    let params = JSON.stringify(event);
+    return this.http.post(this.uri + 'saveEvento/', params, this.httpOptions)
+    .pipe(map(this.extractData));
+  }
+
+  saveUserByAdmin(event, idAdmin){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.getToken()
     })
-    return this.http.put(this.uri+idUser+'removeEvento/'+idEvento, {headers: headers})
+    let params = JSON.stringify(event);
+    return this.http.post(this.uri + 'saveUserOnlyAdmin/'+idAdmin, params, {headers:headers})
+      .pipe(map(this.extractData));
+  }
+
+  removeEvent(eventoId , password){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    })
+    return this.http.put(this.uri+'removeEvento/'+eventoId , {password: password}, {headers: headers})
+    .pipe(map(this.extractData))
+  }
+
+  getEvents(){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    });
+    return this.http.get(this.uri+ 'getEventos', {headers: headers})
     .pipe(map(this.extractData))
   }
 }
+
+

@@ -11,12 +11,13 @@ import { SaveHotelComponent } from './components/save-hotel/save-hotel.component
 import { HomeHotelComponent } from './components/home-hotel/home-hotel.component';
 import { UserComponent } from './components/user/user.component';
 import { ListRoomComponent} from './components/list-room/list-room.component';
+import { ListEventoComponent } from './components/list-evento/list-evento.component';
 
 
 
 
 const routes: Routes = [
-  //una manera de realizarlo
+//importacion de components
   {path: '', component: HomeComponent}, //un solo uso | va a ser la primer ruta que se mostrará (primer componente)
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'homeHotel', component:HomeHotelComponent},
   {path: 'user',component:UserComponent},
   {path: 'habitaciones', component:ListRoomComponent},
+  {path: 'evento', component:ListEventoComponent},
   {path: '**', component: NotFoundComponent}
 
 ];

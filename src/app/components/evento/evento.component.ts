@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RestEventosService } from '../../services/restEventos/rest-eventos.service';
-import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 import { Event } from '../../models/event';
+import { RestEventosService } from '../../services/restEventos/rest-eventos.service';
+import { UploadUserService } from 'src/app/services/uploadUser/upload-user.service';
+import { Router } from '@angular/router';
+import { CONNECTION } from 'src/app/services/global';
 
 @Component({
   selector: 'app-evento',
@@ -9,35 +11,43 @@ import { Event } from '../../models/event';
   styleUrls: ['./evento.component.css']
 })
 export class EventoComponent implements OnInit {
-  public eventos: [];
-  hotel;
-  eventSelected:Event;
+  public title;
+  public event:Event;
+  public token;
+  public possiblePass;
+  public filesToUpload:Array<File>;
+  public message;
+  public status:boolean;
+  public uri;
 
-  constructor(private restHotel:RestHotelService, private restEventos:RestEventosService) { }
 
-  ngOnInit(): void {
-    this.eventSelected = new Event('','',false,null,'','')
-    this.hotel = this.restHotel.getHotel()
-    this.eventos = this.hotel.eventos;
-    console.log(this.eventos)
+  constructor(private restEvent:RestEventosService, private router:Router, private uploadUser:UploadUserService) { 
+    this.title = 'Your Event';
+    this.event = this.restEvent.getEvent();
+    this.token = this.restEvent.getToken();
+    this.possiblePass = '';
+    this.uri = CONNECTION.URI;
   }
 
-  getEvent(event){
-    this.eventSelected = event;
-    console.log(event._id)
+
+  ngOnInit(): void {
   }
 
   removeEvento(){
-    this.restEventos.removeEvento(this.hotel._id, this.eventSelected._id).subscribe((res:any)=>{
-      if(res.eventPull){
-        alert(res.message);
-        localStorage.setItem('hotel', JSON.stringify(res.eventPull))
-        this.hotel = this.restHotel.getHotel()
-        this.eventos = this.hotel.eventos;
+    this.restEvent.removeEvent(this.event._id, this.possiblePass).subscribe((res:any)=>{
+      if(!res.eventRemoved){
+        alert(res.message)
       }else{
         alert(res.message);
+        localStorage.clear();
+        this.router.navigateByUrl('home')
       }
     },
-    error => alert(error.error.message))
+    error=> alert(error.error.message))
+  }
+
+  fileChange(fileInput:any){
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
   }
 }
