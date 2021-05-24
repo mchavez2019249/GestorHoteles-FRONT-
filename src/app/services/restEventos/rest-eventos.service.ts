@@ -16,7 +16,6 @@ export class RestEventosService {
     })
   };
   public token;
-  public evento;
   private extractData(res: Response){
     let body = res;
     return body || [] || {};
@@ -57,15 +56,7 @@ export class RestEventosService {
     .pipe(map(this.extractData));
   }
 
-  saveUserByAdmin(event, idAdmin){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.getToken()
-    })
-    let params = JSON.stringify(event);
-    return this.http.post(this.uri + 'saveUserOnlyAdmin/'+idAdmin, params, {headers:headers})
-      .pipe(map(this.extractData));
-  }
+
 
   removeEvent(eventoId , password){
     let headers = new HttpHeaders({
